@@ -1,6 +1,6 @@
 extends Control
 
-@onready var main = preload("res://Scenes/stage1.tscn").instantiate()
+
 # add_child(scene)
 
 
@@ -10,7 +10,7 @@ func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	pass	
 
 
 func _on_button_pressed():
@@ -23,9 +23,5 @@ func _on_menu_pressed():
 
 
 func _on_resume_pressed():
-	# get_tree().paused = false
-	main.resumegame()
-	
-	
-	
-	
+	pass
+

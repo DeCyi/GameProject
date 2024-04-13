@@ -1,6 +1,5 @@
 extends Node
 
-
 func play_music(path: String) -> void:
 	if $Music.stream and $Music.stream.resource_path == path:
 		return

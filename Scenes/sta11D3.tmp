@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://opfrfv7skwd5"]
+[gd_scene load_steps=18 format=3 uid="uid://opfrfv7skwd5"]
 
 [ext_resource type="PackedScene" uid="uid://c3ewo1ey6tabt" path="res://Scenes/joystick.tscn" id="1_amcah"]
 [ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="1_fgbs2"]
 [ext_resource type="Texture2D" uid="uid://dpk2hqxmdw50p" path="res://Sprites/maplayout.png" id="1_gi0n6"]
 [ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="2_u4xff"]
+[ext_resource type="PackedScene" uid="uid://c1ca1jt1dl8uy" path="res://Scenes/Minigame/friesminigame.tscn" id="3_aes0o"]
 [ext_resource type="Texture2D" uid="uid://bym344msssi8y" path="res://Sprites/Character/Idle.png" id="3_q1tb8"]
 [ext_resource type="Script" path="res://Scenes/interaction area.gd" id="5_g81qb"]
 
@@ -120,64 +121,15 @@ disabled = true
 action_mode = 0
 text = "Interact"
 
-[node name="Panel2" type="Panel" parent="CanvasLayer"]
-offset_left = -1254.0
-offset_top = 157.0
-offset_right = -552.0
-offset_bottom = 564.0
+[node name="Panel3" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_left = 300.0
+offset_top = 121.0
+offset_right = 1002.0
+offset_bottom = 528.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -49.0
-offset_right = 49.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Panel2/MarginContainer"]
-layout_mode = 2
-text = "Andito ka ba"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = -1256.0
-offset_top = -310.0
-offset_right = -554.0
-offset_bottom = 97.0
-
-[node name="Button" type="Button" parent="CanvasLayer/Panel"]
-layout_mode = 2
-offset_left = 242.0
-offset_top = 47.0
-offset_right = 439.0
-offset_bottom = 144.0
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = -20.0
-offset_right = 49.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Andito ka ba"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("3_aes0o")]
+unique_name_in_owner = true
 
 [node name="PauseMenu" type="Panel" parent="CanvasLayer"]
 process_mode = 2

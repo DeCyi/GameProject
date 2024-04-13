@@ -55,11 +55,11 @@ size_flags_vertical = 0
 text = "Leaderboard
 "
 
-[node name="Exit" type="Button" parent="MarginContainer/GridContainer"]
+[node name="Button" type="Button" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="pressed" from="MarginContainer/GridContainer/Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button" to="." method="_on_button_pressed"]

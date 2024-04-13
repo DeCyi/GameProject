@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/Knob.gd" id="4_cikb7"]
 
 [node name="Joystick" type="Node2D"]
-position = Vector2(86, 631)
+position = Vector2(178, 564)
 script = ExtResource("1_cisl4")
 
 [node name="Ring" type="Sprite2D" parent="."]

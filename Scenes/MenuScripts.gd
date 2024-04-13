@@ -25,7 +25,8 @@ func _on_settings_pressed() -> void:
 
 
 func _on_leaderboard_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/placehoilder.tscn")
+	pass
+	#get_tree().change_scene_to_file()
 
 func _on_button_pressed() -> void:
 	get_tree().quit()

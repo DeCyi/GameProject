@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://opfrfv7skwd5"]
+[gd_scene load_steps=22 format=3 uid="uid://opfrfv7skwd5"]
 
 [ext_resource type="PackedScene" uid="uid://c3ewo1ey6tabt" path="res://Scenes/joystick.tscn" id="1_amcah"]
 [ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="1_fgbs2"]
@@ -93,14 +93,8 @@ size = Vector2(1241.67, 262)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcie5"]
 size = Vector2(333.5, 82)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujk8l"]
-size = Vector2(420, 52)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ijuj"]
 size = Vector2(368.25, 89.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_swpyu"]
-size = Vector2(329, 64)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-1, 0)
@@ -131,32 +125,6 @@ disabled = true
 action_mode = 0
 text = "Interact"
 
-[node name="SpaghettiPanel" type="Panel" parent="CanvasLayer"]
-offset_left = -2103.0
-offset_top = -445.0
-offset_right = -1401.0
-offset_bottom = -44.0
-
-[node name="Label" type="Label" parent="CanvasLayer/SpaghettiPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Ano ba yan bro"
-
-[node name="ChickenPanel" type="Panel" parent="CanvasLayer"]
-offset_left = -1256.0
-offset_top = -443.0
-offset_right = -554.0
-offset_bottom = -42.0
-
-[node name="Label" type="Label" parent="CanvasLayer/ChickenPanel"]
-layout_mode = 0
-offset_left = 315.0
-offset_top = 78.0
-offset_right = 409.0
-offset_bottom = 101.0
-text = "Ano ba kase"
-
 [node name="BurgerPanel" type="Panel" parent="CanvasLayer"]
 offset_left = -1254.0
 offset_top = 157.0
@@ -180,9 +148,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FriesPanel" type="Panel" parent="CanvasLayer"]
-offset_left = -2097.0
+visible = false
+offset_left = 350.0
 offset_top = 150.0
-offset_right = -1395.0
+offset_right = 1052.0
 offset_bottom = 557.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kc6xn")
 script = ExtResource("3_11dne")
@@ -331,19 +300,27 @@ shape = SubResource("RectangleShape2D_ur2ky")
 position = Vector2(125, 434)
 shape = SubResource("RectangleShape2D_ur2ky")
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
+offset_left = 305.0
+offset_top = 292.0
+offset_right = 345.0
+offset_bottom = 332.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 715.0
+offset_top = 397.0
+offset_right = 755.0
+offset_bottom = 437.0
+
 [node name="BurgerStation" type="Area2D" parent="."]
 position = Vector2(985, 89)
 script = ExtResource("5_g81qb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurgerStation"]
-position = Vector2(-3, -2)
+position = Vector2(20.75, 9)
 shape = SubResource("RectangleShape2D_rcie5")
-
-[node name="AreaChicken" type="Area2D" parent="."]
-position = Vector2(983, 588)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChicken"]
-shape = SubResource("RectangleShape2D_ujk8l")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(529, 93)
@@ -353,23 +330,12 @@ script = ExtResource("5_g81qb")
 position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_5ijuj")
 
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(498, 595)
-shape = SubResource("RectangleShape2D_swpyu")
-
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="Player" method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/FriesPanel/Button" to="CanvasLayer/FriesPanel" method="_on_butdton_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Menu" to="CanvasLayer" method="_on_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Resume" to="CanvasLayer" method="_on_resume_pressed"]
 [connection signal="draw" from="Player/PlayerColision" to="." method="_on_collision_shape_2d_draw"]
 [connection signal="body_entered" from="BurgerStation" to="Player" method="_on_burger_station_body_entered"]
 [connection signal="body_exited" from="BurgerStation" to="Player" method="_on_burger_station_body_exited"]
-[connection signal="body_entered" from="AreaChicken" to="Player" method="_on_area_2d_2_body_entered"]
-[connection signal="body_exited" from="AreaChicken" to="Player" method="_on_area_2d_2_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Player" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Area2D3" to="Player" method="_on_area_2d_3_body_entered"]
-[connection signal="body_exited" from="Area2D3" to="Player" method="_on_area_2d_3_body_exited"]

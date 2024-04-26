@@ -22,8 +22,6 @@ func _on_play_pressed():
 func _on_settings_pressed() -> void:
 	pass
 
-
-
 func _on_leaderboard_pressed() -> void:
 	pass
 	#get_tree().change_scene_to_file()
